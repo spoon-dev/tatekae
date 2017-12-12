@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 
+  category_id: 1
+  memo: MyText
+  registered_at: 2017-12-09 23:47:38
+  amount: 1
+
+two:
+  event_id: 
+  category_id: 1
+  memo: MyText
+  registered_at: 2017-12-09 23:47:38
+  amount: 1

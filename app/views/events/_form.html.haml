@@ -1,0 +1,40 @@
+#event-form
+  = form_for event do |f|
+    .row
+      - if event.errors.any?
+        :coffee
+          Materialize.toast('error', 4000)
+
+      - p event.errors&.full_messages
+      -#.col.s12
+        - if event.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+            %ul
+              - @event.errors.full_messages.each do |message|
+                %li= message
+
+
+      .input-field.col.s12
+        = f.text_field :title, placeholder: true, class: ""
+        = f.label :title, class: "active"
+
+      .input-field.col.s12
+        = f.text_field :description, placeholder: true, class: "validate"
+        = f.label :description, class: "active"
+
+      .col.s12
+        %p.members-field-title= t('members')
+        #members-field.card.grey.lighten-5
+          .card-content.row
+            -# %p.members-field-title= t('members')
+            = f.fields_for :members do |member|
+              = render 'member_fields', f: member
+            .links
+              = link_to_add_association f, :members, {class: "waves-effect waves-light btn"} do
+                %i.material-icons.left add
+                = t('member.add')
+
+      #submit-action.col.s12
+        .actions
+          = f.submit class: "waves-effect waves-light btn col s12"

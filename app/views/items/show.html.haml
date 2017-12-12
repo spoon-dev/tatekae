@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Event:
+  = @item.event_id
+%p
+  %b Category:
+  = @item.category_id
+%p
+  %b Memo:
+  = @item.memo
+%p
+  %b Registered at:
+  = @item.registered_at
+%p
+  %b Amount:
+  = @item.amount
+
+= link_to 'Edit', edit_item_path(@item)
+\|
+= link_to 'Back', items_path

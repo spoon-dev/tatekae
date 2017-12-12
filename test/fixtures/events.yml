@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  locale_id: 1
+  calc_id: 1
+
+two:
+  title: MyString
+  description: MyString
+  locale_id: 1
+  calc_id: 1

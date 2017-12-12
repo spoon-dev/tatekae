@@ -1,0 +1,48 @@
+= form_for [event, item] do |f|
+  .row
+    - if item.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
+        %ul
+          - item.errors.full_messages.each do |message|
+            %li= message
+
+    .input-field.col.s12
+      = f.collection_select :category_id, item.available_categories, :id, :name
+      = f.label :category_id, class: ""
+
+    .input-field.col.s12
+      = f.text_field :memo, placeholder: true, class: ""
+      = f.label :memo, class: " active"
+
+
+    .col.s7
+      = f.label :"tmp_payer"
+    .col.s5.right-align
+      = f.label :"tmp_amount"
+    = f.fields_for :tmp_payment do |tp|
+      .col.s7
+        = tp.collection_select :member_id, item.available_members, :id, :name
+    .col.s5
+      = f.text_field :tmp_amount, placeholder: true, class: "right-align"
+
+    .col.s7
+      = f.label :"act_payers", class: "active"
+    .col.s5.right-align
+      = f.label :"act_amount", class: "active"
+    .col.s12
+      = f.fields_for :act_payments, item.available_act_payments do |ap|
+        .row.act-payment
+          .col.s7
+            %p
+              = ap.hidden_field :id
+              = ap.hidden_field :member_id
+              = ap.check_box :_destroy, {class: 'is-act-payer'}, false, true
+              = ap.label :_destroy, ap.object.member_name
+          .col.s5
+            %p.right-align.grey-text
+              %span.act-amount
+  .row
+    .col.s12
+      .actions
+        = f.submit class: "waves-effect waves-light btn btn-flat cyan white-text col s12"

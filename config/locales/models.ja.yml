@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      event:     "イベント"
+      member:    "グループメンバー"
+      item:      "立て替え項目"
+  activerecord:
+    attributes:
+      event:
+        title:       "タイトル"
+        members:     "グループメンバー"
+        description: "説明"
+      event/members:
+        name: "メンバーの名前"
+      member:
+        name:    "名前"
+      item:
+        category_id: "立て替え項目"
+        memo:        "メモ"
+        tmp_payer:   "立て替えた人"
+        tmp_amount:  "立て替え金額（円）"
+        act_payers:  "支払う人"
+        act_amount:  "支払う金額（円）"
+
+  helpers:
+    placeholder:
+      event:
+        title:        "例）○○飲み会、□□旅行…"
+        description:  "（任意）"
+      member:
+        name:         "例）Ａさん、Ｂくん…"
+      item:
+        memo:         "メモ（任意）"
+        tmp_amount:   "例）10000"

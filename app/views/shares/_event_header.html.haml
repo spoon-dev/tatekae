@@ -1,0 +1,15 @@
+#event-header
+  .container
+    .row
+      .col.s12
+        %h5
+          = event.title
+          .right
+            %a.btn-floating.btn-flat.cyan.white-text.waves-effect{href: edit_event_path(event)}
+              %i.material-icons.left edit
+        %p
+          = event.description
+        %p
+          = "#{t 'this_page_url'}:"
+          %br
+          = link_to_event_fullpath event

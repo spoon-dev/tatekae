@@ -1,0 +1,10 @@
+.container
+  .row
+    .col.s12
+      %h1 New event
+
+  = render 'form', event: @event
+
+  .row
+    .col.s12
+      = link_to 'Back', events_path

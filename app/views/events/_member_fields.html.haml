@@ -1,0 +1,9 @@
+.nested-fields.input-field.input-group
+  = f.text_field :name, placeholder: true, class: "validate"
+  = f.label :name, class: "active"
+  %span.suffix
+    = link_to_remove_association f, {class: "btn btn-floating waves-effect waves-light"} do
+      %i.material-icons
+        delete
+
+  = f.hidden_field :order, class: "member-order"

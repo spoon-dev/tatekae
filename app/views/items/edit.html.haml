@@ -1,0 +1,35 @@
+= render 'shares/page_header'
+= render 'shares/event_header', event: @event
+
+
+.container
+  .row
+    .col.s12
+      %h6
+        = t('item.edit')
+
+  = render 'form', event: @event, item: @item
+
+  .row
+    .col.s12
+      %a.waves-effect.waves-light.btn.btn-flat.pink.white-text.modal-trigger.col.s12{href: "#confirm-modal"}
+        = t('destroy')
+
+  .row
+    .col.s12
+      = link_to t('item.cancel'), event_items_path(@event), class: "waves-effect btn btn-flat col s12"
+
+
+
+#confirm-modal.modal
+  .modal-content
+    %h5
+      = t('item.destroy')
+    %p
+      = t('item.destroy_confirmation')
+  .modal-footer
+    %a.modal-action.modal-close.waves-effect.btn-flat{href: "#"}
+      = t('cancel')
+
+    = link_to event_item_path(@event, @item), method: :delete, class: "modal-action modal-close waves-effect waves-light btn btn-flat pink white-text" do
+      = t('destroy')

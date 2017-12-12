@@ -1,0 +1,34 @@
+= render 'shares/page_header'
+= render 'shares/event_header', event: @event
+
+= render 'shares/notice', notice: notice if notice
+
+
+#items
+  .container
+    .row
+      .col.s12
+        %h5
+          = t('event.items')
+
+      .col.s12
+        = link_to t('item.create'), new_event_item_path(@event) ,class: "waves-effect waves-light btn btn-flat cyan white-text col s12"
+
+      %table
+        %thead
+          %tr
+            %th
+            %th
+            %th
+
+        %tbody
+          - @items.each do |item|
+            %tr
+              %td= item.category_name
+              %td= item.memo
+              %td= link_to 'Show', event_item_path(@event, item)
+              %td= link_to 'Edit', edit_event_item_path(@event, item)
+              %td= link_to 'Destroy', event_item_path(@event, item), method: :delete, data: { confirm: 'Are you sure?' }
+
+
+=# link_to 'New Item', new_item_path

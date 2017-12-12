@@ -1,0 +1,30 @@
+ja:
+  event:  "イベント"
+  members: "グループメンバー"
+  this_page_url: "このページのURL"
+  calcel: "キャンセル"
+  destroy: "削除する"
+  member:
+    add:   "メンバーを追加する"
+  page:
+    title: "tatekae.work"
+  event:
+    items: "立て替え項目一覧"
+    created:
+      successfully: "イベントが正常に登録されました"
+    updated:
+      successfully: "イベントが正常に更新されました"
+    destroyed:
+      successfully: "イベントが正常に削除されました"
+  item:
+    create:  "新規立て替え項目登録"
+    cancel:  "キャンセル"
+    edit:    "立て替え項目修正"
+    destroy: "立て替え項目削除"
+    destroy_confirmation: "立て替え項目を削除してもいいですか？"
+    created:
+      successfully: "立て替え項目が正常に登録されました"
+    updated:
+      successfully: "立て替え項目が正常に更新されました"
+    destroyed:
+      successfully: "立て替え項目が正常に削除されました"
