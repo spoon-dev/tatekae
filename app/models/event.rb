@@ -21,4 +21,15 @@ class Event < ApplicationRecord
   def available_members
     members.default_order
   end
+
+  def items_grouped_by_date
+    hashed_items = {}
+    items.registered_at_desc_order.each do |item|
+      date = I18n.l(item.registered_at, format: :yyyymmdd).to_s
+      p date
+      hashed_items[date] ||= []
+      hashed_items[date] << item
+    end
+    p hashed_items
+  end
 end

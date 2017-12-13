@@ -11,10 +11,22 @@
       = f.collection_select :category_id, item.available_categories, :id, :name
       = f.label :category_id, class: ""
 
+    .input-field.col.s6
+      = f.text_field :registered_at_date, placeholder: true, class: "datepicker",
+          id: "registered_at_date"
+      = f.label :registered_at_date, class: "active"
+
+    .input-field.col.s6
+      = f.text_field :registered_at_time, placeholder: true, class: "timepicker",
+          id: "registered_at_time"
+      = f.label :registered_at_time, class: "active"
+
+    = f.hidden_field :registered_at, value: l(item.registered_at, format: :short),
+        id: "registered_at"
+
     .input-field.col.s12
       = f.text_field :memo, placeholder: true, class: ""
       = f.label :memo, class: " active"
-
 
     .col.s7
       = f.label :"tmp_payer"
@@ -24,7 +36,7 @@
       .col.s7
         = tp.collection_select :member_id, item.available_members, :id, :name
     .col.s5
-      = f.text_field :tmp_amount, placeholder: true, class: "right-align"
+      = f.text_field :tmp_amount, placeholder: true, class: "right-align", id: "tmp-amount"
 
     .col.s7
       = f.label :"act_payers", class: "active"
@@ -40,8 +52,9 @@
               = ap.check_box :_destroy, {class: 'is-act-payer'}, false, true
               = ap.label :_destroy, ap.object.member_name
           .col.s5
-            %p.right-align.grey-text
+            %p.right-align.cyan-text
               %span.act-amount
+
   .row
     .col.s12
       .actions

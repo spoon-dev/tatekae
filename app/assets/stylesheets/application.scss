@@ -19,6 +19,14 @@
 $primary-color:   color("cyan", "base");
 $secondary-color: $primary-color;
 $link-color:      $primary-color;
+
+// 23. Collections
+// ==========================================================================
+
+$collection-hover-bg-color: #f7fbfc;
+$collection-link-color: rgba(0, 0, 0, 0.87);
+$collection-line-height: 1.5rem;
+
 @import "materialize";
 
 // form input-group
@@ -32,4 +40,8 @@ $link-color:      $primary-color;
 
 .suffix {
     width:1%;
+}
+
+.material-icons.material-icons-small {
+    font-size: 75%;
 }

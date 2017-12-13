@@ -21,6 +21,8 @@ ja:
         tmp_amount:  "立て替え金額（円）"
         act_payers:  "支払う人"
         act_amount:  "支払う金額（円）"
+        registered_at_date: "登録日"
+        registered_at_time: "時間"
 
   helpers:
     placeholder:
@@ -32,3 +34,5 @@ ja:
       item:
         memo:         "メモ（任意）"
         tmp_amount:   "例）10000"
+        registered_at_date: "yyyy/mm/dd"
+        registered_at_time: "hh:mm"

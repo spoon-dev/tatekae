@@ -3,5 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #items {
-
+  .row-date-header {
+    margin: 10px 0 5px 0;
+  }
+  .collection-items {
+    margin: 0;
+  }
+  .row-item {
+    margin-bottom: 10px;
+  }
 }

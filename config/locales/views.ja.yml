@@ -8,6 +8,7 @@ ja:
     add:   "メンバーを追加する"
   page:
     title: "tatekae.work"
+    short_description: "立て替え管理"
   event:
     items: "立て替え項目一覧"
     created:

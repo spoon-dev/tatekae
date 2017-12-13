@@ -1,4 +1,8 @@
 class Item < ApplicationRecord
+  #attr_accessor :registered_at_date, :registered_at_time
+
+  scope :registered_at_desc_order, -> { order("registered_at desc") }
+
   belongs_to :event, touch: true
   belongs_to :category
 
@@ -11,14 +15,23 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :act_payments, allow_destroy: true
 
   delegate :name, to: :category, prefix: true
+  delegate :icon, to: :category, prefix: true
   delegate :available_categories, to: :event
   delegate :available_members,    to: :event
+  delegate :member_name, to: :tmp_payment, prefix: true
 
   validates :event_id, :category_id, :registered_at, presence: true
   validates :tmp_amount, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
   after_initialize :set_default_category, :set_default_registered_at, :set_default_tmp_payment
 
+  def registered_at_date
+    registered_at.strftime('%Y/%m/%d')
+  end
+
+  def registered_at_time
+    registered_at.strftime('%H:%M')
+  end
 
   def available_act_payments
     available_members.map do |m|
@@ -27,7 +40,6 @@ class Item < ApplicationRecord
       end
     end
   end
-
 
   private
     def set_default_category

@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = @event.items.all
+    #@items = @event.items.registered_at_desc_order
   end
 
   # GET /items/1

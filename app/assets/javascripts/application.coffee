@@ -17,8 +17,22 @@
 #= require cocoon
 
 
-
-
 $(document).on 'turbolinks:load', ->
   $('select').material_select();
   $('.modal').modal();
+  $('.datepicker').pickadate
+    selectMonths: true,
+    selectYears: 5,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false,
+    format: 'yyyy/mm/dd'
+
+  $('.timepicker').pickatime
+    twelvehour: false,
+    donetext: 'OK',
+    cleartext: 'Clear',
+    canceltext: 'Cancel',
+    autoclose: false,
+    ampmclickable: false
