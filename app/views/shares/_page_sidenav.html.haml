@@ -1,0 +1,37 @@
+%ul#page-sidenav.side-nav
+  %li.cyan.page-view
+    = link_to root_path, class: "white-text" do
+      = t('page.title')
+      %sup
+        β
+  %li
+    = link_to t('page.top'), root_path
+  %li
+    = link_to t('page.about'), root_path
+  %li
+    = link_to t('page.help'), root_path
+  - if event.persisted?
+    %li.no-padding
+      %ul.collapsible.collapsible-accordion{"data-collapsible": "expandable"}
+        %li
+          %a.collapsible-header.active.truncate
+            = t('event.now')
+          .collapsible-body
+            %ul
+              %li
+                = link_to t('item.list'), event_items_path(event)
+              %li
+                = link_to t('item.create'), new_event_item_path(event), class: "btn"
+  %li.no-padding
+    %ul.collapsible.collapsible-accordion{"data-collapsible": "expandable"}
+      %li
+        %a.collapsible-header.active.truncate
+          = t('event.history')
+        .collapsible-body
+          %ul
+            %li
+              %a aaaa
+            %li
+              %a bbbb
+            %li
+              %a cccc
