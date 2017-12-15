@@ -24,10 +24,6 @@
     = f.hidden_field :registered_at, value: l(item.registered_at, format: :short),
         id: "registered_at"
 
-    .input-field.col.s12
-      = f.text_field :memo, placeholder: true, class: ""
-      = f.label :memo, class: " active"
-
     .col.s7
       = f.label :"tmp_payer"
     .col.s5.right-align
@@ -55,6 +51,10 @@
             %p.right-align.cyan-text
               %span.act-amount
 
+    .input-field.col.s12
+      = f.text_area :memo, placeholder: true, class: "materialize-textarea"
+      = f.label :memo, class: "active"
+      
   .row
     .col.s12
       .actions

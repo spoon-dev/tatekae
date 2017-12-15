@@ -32,7 +32,7 @@ ja:
       member:
         name:         "例）Ａさん、Ｂくん…"
       item:
-        memo:         "メモ（任意）"
+        memo:         "（任意）"
         tmp_amount:   "例）10000"
         registered_at_date: "yyyy/mm/dd"
         registered_at_time: "hh:mm"

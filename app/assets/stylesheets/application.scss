@@ -29,6 +29,23 @@ $collection-line-height: 1.5rem;
 
 @import "materialize";
 
+nav#page-header {
+  box-shadow: none;
+  height: 42px;
+  line-height: 42px;
+  .brand-logo {
+    font-size: 1.2rem;
+  }
+}
+
+small {
+    font-size: 80%;
+}
+
+.container {
+  max-width: 520px;
+}
+
 // form input-group
 .input-group {
     display: table;
@@ -40,8 +57,4 @@ $collection-line-height: 1.5rem;
 
 .suffix {
     width:1%;
-}
-
-.material-icons.material-icons-small {
-    font-size: 75%;
 }

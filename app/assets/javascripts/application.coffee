@@ -20,6 +20,7 @@
 $(document).on 'turbolinks:load', ->
   $('select').material_select();
   $('.modal').modal();
+  $('.materialize-textarea').trigger('autoresize');
   $('.datepicker').pickadate
     selectMonths: true,
     selectYears: 5,

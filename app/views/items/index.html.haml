@@ -17,21 +17,25 @@
       .col.s12
         - @event.items_grouped_by_date.each do |date, items|
           .row.row-date-header
-            %small.grey-text= date
+            %small.grey-text
+              = date
           .collection.collection-items
             - items.each do |item|
               = link_to edit_event_item_path(@event, item), class: "collection-item" do
                 .row.row-item
                   .col.s7.grey-text
-                    %small= item.tmp_payment_member_name
+                    %small
+                      = item.tmp_payment_member_name
                   .col.s5.right-align.grey-text
                     %small
-                      %i.material-icons.material-icons-small access_time
                       = l item.registered_at, format: :HHMM
                   .col.s7
                     = item.category_name
                   .col.s5.right-align
-                    = item.tmp_amount
+                    = number_to_currency item.tmp_amount
+                  .col.s12.grey-text
+                    %small.truncate
+                      = item.memo.presence || "-"
 
 
 
