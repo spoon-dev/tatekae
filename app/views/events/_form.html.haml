@@ -24,16 +24,19 @@
         = f.label :description, class: "active"
 
       .col.s12
-        %p.members-field-title= t('members')
         #members-field.card.grey.lighten-5
-          .card-content.row
-            -# %p.members-field-title= t('members')
-            = f.fields_for :members do |member|
-              = render 'member_fields', f: member
-            .links
-              = link_to_add_association f, :members, {class: "waves-effect waves-light btn"} do
-                %i.material-icons.left add
-                = t('member.add')
+          .card-content
+            .row
+              .col.s12
+                %p.grey-text= t('members')
+            .row
+              = f.fields_for :members do |member|
+                = render 'member_fields', f: member
+              .links
+                .col.s12
+                  = link_to_add_association f, :members, {class: "waves-effect waves-light btn"} do
+                    %i.material-icons.left add
+                    = t('member.add')
 
       #submit-action.col.s12
         .actions

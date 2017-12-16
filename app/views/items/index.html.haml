@@ -8,11 +8,11 @@
     .row
       .col.s12
         %h5
-          = t('event.items')
+          = t('item.list')
 
       .col.s12
         = link_to t('item.create'), new_event_item_path(@event) ,
-            class: "waves-effect waves-light btn btn-flat cyan white-text col s12"
+            class: "waves-effect waves-light btn cyan white-text col s12"
 
       .col.s12
         - @event.items_grouped_by_date.each do |date, items|

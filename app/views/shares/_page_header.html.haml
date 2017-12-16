@@ -1,6 +1,13 @@
+= render 'shares/page_sidenav', event: @event
+
 %nav#page-header
   .nav-wrapper
-    %a.brand-logo.center{href: root_path}
+    %span.brand-logo.center
       = t 'page.title'
       %sup
         β
+    .container
+      %ul.right
+        %li
+          %a.button-collapse.show-on-large{href: "#", "data-activates": "page-sidenav"}
+            %i.material-icons menu

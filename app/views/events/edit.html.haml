@@ -1,7 +1,14 @@
-%h1 Editing event
+= render 'shares/page_header'
 
-= render 'form'
+.container
+  .row
+    .col.s12
+      %h5
+        = t('event.edit')
 
-= link_to 'Show', @event
-\|
-= link_to 'Back', events_path
+  = render 'form', event: @event
+
+  .row
+    .col.s12
+      = link_to t('cancel'), event_items_path(@event),
+        class: "waves-effect btn btn-flat white col s12"

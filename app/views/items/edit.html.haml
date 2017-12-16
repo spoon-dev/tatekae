@@ -8,14 +8,11 @@
       %h6
         = t('item.edit')
 
-  = render 'form', event: @event, item: @item
+    = render 'form', event: @event, item: @item
 
-  .row
     .col.s12
       %a.waves-effect.waves-light.btn.btn-flat.pink.white-text.modal-trigger.col.s12{href: "#confirm-modal"}
         = t('destroy')
-
-  .row
     .col.s12
       = link_to t('item.cancel'), event_items_path(@event), class: "waves-effect btn btn-flat white col s12"
 

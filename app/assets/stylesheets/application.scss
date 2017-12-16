@@ -31,11 +31,35 @@ $collection-line-height: 1.5rem;
 
 nav#page-header {
   box-shadow: none;
-  height: 42px;
-  line-height: 42px;
+//  height: 42px;
+//  line-height: 42px;
   .brand-logo {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
+  i.material-icons, a.button-collapse {
+//    height: 42px;
+//    line-height: 42px;
+  }
+}
+
+#page-sidenav {
+  .page-view {
+    padding-top:  50px;
+    padding-bottom: 10px;
+    a:hover {
+        background-color: initial;
+    }
+  }
+  & > li > a {
+    padding: 0 16px;
+  }
+  .collapsible-header {
+    background-color: #fff;
+  }
+  .btn {
+    margin-left: 31px;
+  }
+
 }
 
 small {

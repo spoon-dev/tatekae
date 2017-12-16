@@ -3,10 +3,10 @@
     .row
       .col.s12
         %h5
-          = event.title
           .right
-            %a.btn-floating.btn-flat.cyan.white-text.waves-effect{href: edit_event_path(event)}
+            %a.btn-floating.cyan.white-text.waves-effect{href: edit_event_path(event)}
               %i.material-icons.left edit
+          = event.title
         %p
           = event.description
         %p

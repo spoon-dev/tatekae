@@ -2,15 +2,20 @@ ja:
   event:  "イベント"
   members: "グループメンバー"
   this_page_url: "このページのURL"
-  calcel: "キャンセル"
+  cancel: "キャンセル"
   destroy: "削除する"
   member:
     add:   "メンバーを追加する"
   page:
     title: "tatekae.work"
     short_description: "立て替え管理"
+    top:   "トップ"
+    about: "このサイトについて"
+    help:  "ヘルプ"
   event:
-    items: "立て替え項目一覧"
+    now:     "現在のイベント"
+    history: "最近見たイベント"
+    edit:    "イベント修正"
     created:
       successfully: "イベントが正常に登録されました"
     updated:
@@ -20,6 +25,7 @@ ja:
   item:
     create:  "新規立て替え項目登録"
     cancel:  "キャンセル"
+    list:    "立て替え項目一覧"
     edit:    "立て替え項目修正"
     destroy: "立て替え項目削除"
     destroy_confirmation: "立て替え項目を削除してもいいですか？"
